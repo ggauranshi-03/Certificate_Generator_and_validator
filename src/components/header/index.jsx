@@ -174,14 +174,14 @@ export default function Header() {
         }}
       >
         <Toolbar>
-          <Typography
+          {/* <Typography
             variant="h5"
             noWrap
             component="div"
             sx={{ display: { xs: "none", sm: "block", fontWeight: "bold" } }}
           >
             certiverse
-          </Typography>
+          </Typography> */}
           <Box sx={{ flexGrow: 1 }} />
           <Box
             sx={{
