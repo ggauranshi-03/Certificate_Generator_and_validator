@@ -41,10 +41,10 @@ export default function IssueCertificatePage() {
     const [fileUrl, setFileUrl] = useState(null)
     const [message, updateMessage] = useState('');
     const [index, setIndex] = useState(0)
-    const {auth} = useAuth();
+    const { auth } = useAuth();
     const handleChangeSign = (e) => {
         // if(auth.contract.isOrganizationVerified[auth.accountAddr]){
-            setSign(URL.createObjectURL(e.target.files[0]))
+        setSign(URL.createObjectURL(e.target.files[0]))
         // }
         // else{
         //     alert("You are not Verified")
@@ -89,8 +89,8 @@ export default function IssueCertificatePage() {
 
     async function uploadImage(e) {
         // if(auth.contract.isOrganizationVerified[auth.accountAddr]){
-            e.preventDefault()
-            await domToImage.toJpeg(document.getElementById(styles.certificateImage))
+        e.preventDefault()
+        await domToImage.toJpeg(document.getElementById(styles.certificateImage))
             .then(async (res) => {
                 const img = await dataUrlToFile(res)
                 await setImage(img)
@@ -144,12 +144,14 @@ export default function IssueCertificatePage() {
                     width: "100%",
                     flexDirection: "column",
                     height: "100%",
-                    background: "inherit",
+                    // background: "inherit",
                     padding: "1rem",
+                    // backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)'
+                    backgroundColor: "black"
                 }}
             >
                 <div style={{ display: "flex", alignItems: "flex-end", gap: 10 }}>
-                    <Typography component="div" variant="h3">Issue a new certificate</Typography>
+                    <Typography component="div" variant="h3" sx={{ color: 'white' }}>Issue a new certificate</Typography>
                     <div style={{ paddingBottom: 5 }}>
                         <Typography component="div" variant="h6" color="primary">To a user</Typography>
                     </div>
@@ -168,10 +170,12 @@ export default function IssueCertificatePage() {
                             gap: "1rem",
                             width: "35%",
                             padding: "1rem",
-                            height: "100%"
+                            height: "100%",
+                            backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)'
                         }}
                     >
-                        <Typography variant="h6" component="div">Enter Details</Typography>
+                        <Typography variant="h6" component="div" sx={{ color: 'white' }}>Enter Details</Typography>
+
                         <div
                             style={{
                                 display: "flex",
@@ -189,8 +193,17 @@ export default function IssueCertificatePage() {
                                 type={addressSaved ? "password" : "text"}
                                 disabled={addressSaved}
                                 fullWidth
+                                InputLabelProps={{ style: { color: 'white' } }} // Change color of the label
+                                InputProps={{
+                                    style: {
+                                        border: 'white solid',
+                                        color: 'white', // Change color of the text
+                                    },
+                                    placeholder: "Enter receiver's address", // Change color of the placeholder
+                                }}
                             />
-                            <Button variant="contained" onClick={() => setAddressSaved(prev => !prev)}>
+
+                            <Button variant="contained" onClick={() => setAddressSaved(prev => !prev)} sx={{ color: 'white' }}>
                                 {addressSaved ? "Update" : "Save"}
                             </Button>
                         </div>
@@ -201,6 +214,14 @@ export default function IssueCertificatePage() {
                             onChange={(e) => setReceiverName(e.target.value)}
                             value={receiverName}
                             fullWidth
+                            InputLabelProps={{ style: { color: 'white' } }} // Change color of the label
+                            InputProps={{
+                                style: {
+                                    border: 'white solid',
+                                    color: 'white', // Change color of the text
+                                },
+                                placeholder: "Enter receiver's address", // Change color of the placeholder
+                            }}
                         />
                         <TextField
                             label="Description"
@@ -212,8 +233,21 @@ export default function IssueCertificatePage() {
                             multiline
                             rows={5}
                             maxRows={5}
+                            InputLabelProps={{ style: { color: 'white' } }} // Change color of the label
+                            InputProps={{
+                                style: {
+                                    border: 'white solid',
+                                    color: 'white', // Change color of the text
+                                },
+                                placeholder: "Enter receiver's address", // Change color of the placeholder
+                            }}
                         />
-                        <Button component="label" variant="contained" startIcon={<CloudUploadIcon />}>
+                        <Button
+                            component="label"
+                            variant="contained"
+                            startIcon={<CloudUploadIcon />}
+                            sx={{ color: 'white', border: "white solid" }} // Change color of the text
+                        >
                             Upload Signature
                             <VisuallyHiddenInput
                                 type="file"
@@ -222,7 +256,8 @@ export default function IssueCertificatePage() {
                                 onChange={handleChangeSign}
                             />
                         </Button>
-                        <Button onClick={() => setModalOpen(true)} variant='contained'>
+
+                        <Button onClick={() => setModalOpen(true)} variant='contained' sx={{ color: 'white', border: "white solid" }}>
                             Submit
                         </Button>
                     </Paper>
@@ -232,7 +267,8 @@ export default function IssueCertificatePage() {
                             height: "100%",
                             display: "flex",
                             justifyContent: "center",
-                            padding: '1rem'
+                            padding: '1rem',
+                            backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)'
                         }}
                     >
                         <div id={styles.certificateImage}>
@@ -267,17 +303,20 @@ export default function IssueCertificatePage() {
                             padding: "1rem",
                             display: "flex",
                             flexDirection: "column",
-                            gap: "1rem"
+                            gap: "1rem",
+                            backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)',
+                            // border: "white solid"
                         }}
                     >
-                        <Typography component="div" variant="h5">Available Templates</Typography>
+                        <Typography component="div" variant="h5" sx={{ color: 'white' }}>Available Templates</Typography>
                         <div
                             style={{
                                 display: "flex",
                                 gap: "1rem",
                                 flexWrap: "wrap",
                                 flex: "0 1",
-                                justifyContent: "space-evenly"
+                                justifyContent: "space-evenly",
+                                // backgroundColor: "black"
                             }}
                         >
                             {data.map((e, i) => (

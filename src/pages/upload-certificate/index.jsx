@@ -95,11 +95,12 @@ export default function UploadCertificatePage() {
                     height: "100%",
                     background: "inherit",
                     padding: "1rem",
+                    // backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)',
                 }}
                 className="something"
             >
                <div style={{ display: "flex", alignItems: "flex-end", gap: 10 }}>
-                    <Typography component="div" variant="h3">Upload a new certificate</Typography>
+                    <Typography component="div" variant="h3" sx={{ color: 'white' }}>Upload a new certificate</Typography>
                     <div style={{ paddingBottom: 5 }}>
                         <Typography component="div" variant="h6" color="primary">To a user</Typography>
                     </div>
@@ -117,16 +118,19 @@ export default function UploadCertificatePage() {
                             flexDirection: "column",
                             gap: "1rem",
                             width: "35%",
-                            padding: "1rem"
+                            padding: "1rem",
+                            backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)',
                         }}
                     >
-                        <Typography variant="h6" component="div">Enter Details</Typography>
+                        <Typography variant="h6" component="div" sx={{ color: 'white' }}>Enter Details</Typography>
                         <div
                             style={{
                                 display: "flex",
                                 gap: "2rem",
                                 padding: 0,
-                                background: "inherit"
+                                background: "inherit",
+                                backgroundColor: "black"
+                                // backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)',
                             }}
                         >
                             <TextField
@@ -138,12 +142,20 @@ export default function UploadCertificatePage() {
                                 type={addressSaved ? "password" : "text"}
                                 disabled={addressSaved}
                                 fullWidth
+                                InputLabelProps={{ style: { color: 'white' } }} // Change color of the label
+                                InputProps={{
+                                    style: {
+                                        border: 'white solid',
+                                        color: 'white', // Change color of the text
+                                    },
+                                    placeholder: "Enter receiver's address", // Change color of the placeholder
+                                }}
                             />
-                            <Button variant="contained" onClick={() => setAddressSaved(prev => !prev)}>
+                            <Button variant="contained" onClick={() => setAddressSaved(prev => !prev)} sx={{ color: 'white' }}>
                                 {addressSaved ? "Update" : "Save"}
                             </Button>
                         </div>
-                        <Button component="label" variant="contained" startIcon={<CardMembershipIcon />}>
+                        <Button component="label" variant="contained" startIcon={<CardMembershipIcon />} sx={{ color: 'white' }}>
                             Upload Certificate
                             <VisuallyHiddenInput
                                 type="file"
@@ -152,13 +164,14 @@ export default function UploadCertificatePage() {
                                 onChange={handleChangeFile}
                             />
                         </Button>
-                        <Button component="label" variant="contained" startIcon={<ArrowUpwardIcon />} onClick={handleSubmit}>
+                        <Button component="label" variant="contained" startIcon={<ArrowUpwardIcon />} onClick={handleSubmit} sx={{ color: 'white' }}>
                             Submit
                         </Button>
                     </Paper>
                     <Paper
                         sx={{
-                            width: "100%"
+                            width: "100%",
+                            backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)',
                         }}
                     >
                         {fileURL && <img src={fileURL} alt="certificate" style={{ width: "100%", maxHeight: "60vh" }} />}

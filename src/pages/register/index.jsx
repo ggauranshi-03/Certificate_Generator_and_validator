@@ -63,10 +63,11 @@ export default function RegisterPage() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                minHeight: "100%",
+                height: "100%",
                 flexDirection: "column",
-                width: "60%",
+                width: "40%",
                 gap: "1rem",
+
             }}
         >
             <Paper
@@ -77,7 +78,8 @@ export default function RegisterPage() {
                     display: "flex",
                     flexDirection: "column",
                     gap: "1rem",
-                    borderRadius: "1rem"
+                    borderRadius: "1rem",
+                    backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)',
                 }}
             >
                 <form onSubmit={submitHandler} >
@@ -92,28 +94,43 @@ export default function RegisterPage() {
                             textAlign: "center"
                         }}
                     >
-                        <BusinessIcon fontSize="large" color="primary" />
-                        <Typography variant="h5" component="div" fontWeight={600} fontSize={18}>Register your company</Typography>
+                        {/* <BusinessIcon fontSize="large" color="primary" /> */}
+                        <Typography variant="h2" component="div" fontWeight={900} fontSize={30} sx={{color: "white"}}>Register your company</Typography>
                     </Container>
+                    <br />
                     <Container
                         sx={{
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
                             flexDirection: "column",
-                            gap: "1rem"
+                            gap: "1rem",
+                            fontWeight: "1rem"
                         }}
                     >
                         <TextField
                             placeholder="Company Name"
                             fullWidth
-                            label="Company Name"
+                            label="Institute Name"
                             name="companyName"
                             required
                             onChange={handleChangeFormData}
                             error={!isValid.companyName}
                             value={formData.companyName}
+                            // InputLabelProps={{
+                            //     style: { fontWeight: 'bold' } // Increase font weight
+                            // }}
+                            InputLabelProps={{ style: { color: 'white' } }} // Change color of the label
+                                InputProps={{
+                                    style: {
+                                        border: 'white solid',
+                                        fontWeight: 'bold',
+                                        color: 'white', // Change color of the text
+                                    },
+                                    placeholder: "Enter receiver's address", // Change color of the placeholder
+                                }}
                         />
+
                         <TextField
                             placeholder="Registration No."
                             label="Registration No."
@@ -121,10 +138,19 @@ export default function RegisterPage() {
                             name="registrationNo"
                             required
                             onChange={handleChangeFormData}
-                            error={!isValid.registrationNo}
-                            helperText={!isValid.registrationNo && "Registration No accepts 12 digit number"}
-                            // value={formData.registrationNo}
+                            // error={!isValid.registrationNo}
+                            // helperText={"Registration No accepts 12 digit number"}
+                            InputLabelProps={{ style: { color: 'white' } }} // Change color of the label
+                                InputProps={{
+                                    style: {
+                                        border: 'white solid',
+                                        fontWeight: 'bold',
+                                        color: 'white', // Change color of the text
+                                    },
+                                    placeholder: "Enter receiver's address", // Change color of the placeholder
+                                }}
                         />
+
                         <TextField
                             placeholder="Address"
                             label="Address"
@@ -137,8 +163,17 @@ export default function RegisterPage() {
                             onChange={handleChangeFormData}
                             error={!isValid.location}
                             value={formData.location}
-
+                            InputLabelProps={{ style: { color: 'white' } }} // Change color of the label
+                                InputProps={{
+                                    style: {
+                                        border: 'white solid',
+                                        fontWeight: 'bold',
+                                        color: 'white', // Change color of the text
+                                    },
+                                    placeholder: "Enter receiver's address", // Change color of the placeholder
+                                }}
                         />
+
                         <TextField
                             placeholder="Pincode"
                             label="Pincode"
@@ -148,11 +183,19 @@ export default function RegisterPage() {
                             onChange={handleChangeFormData}
                             error={!isValid.pinCode}
                             helperText={!isValid.pinCode && "Pin code accepts 6 digit number"}
-                            // value={formData.pinCode}
+                            InputLabelProps={{ style: { color: 'white' } }} // Change color of the label
+                                InputProps={{
+                                    style: {
+                                        border: 'white solid',
+                                        fontWeight: 'bold',
+                                        color: 'white', // Change color of the text
+                                    },
+                                    placeholder: "Enter receiver's address", // Change color of the placeholder
+                                }}
                         />
                     </Container>
                     <Container>
-                        <Button type="submit" variant="contained" fullWidth >
+                        <Button type="submit" variant="contained" fullWidth sx={{ color: 'white' }}>
                             Register
                         </Button>
                     </Container>

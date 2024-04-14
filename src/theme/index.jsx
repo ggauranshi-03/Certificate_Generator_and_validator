@@ -10,16 +10,16 @@ export default function ThemeProvider({ children }) {
     palette: {
       type: "dark",
       primary: {
-        main: "#2ECEC2",
+        main: "#000",
         contrastText: "#45474B",
       },
       background: {
-        default: "#2e2e2e",
+        default: "#000",
         paper: "#45474B",
       },
       text: {
-        primary: "#F5F7F8",
-        secondary: "#F5F7F8",
+        primary: "#000",
+        secondary: "#000",
       },
     },
     typography: {

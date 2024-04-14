@@ -60,9 +60,10 @@ export default function IssuedCertificatesPage() {
                 height: "100%",
                 width: "100%",
                 padding: "2rem",
+                
             }}
         >
-            <Typography component="div" variant="h4">Check for issued certificates</Typography>
+            <Typography component="div" variant="h4" sx={{color: "white"}}>Check for issued certificates</Typography>
             <div
                 style={{
                     background: "inherit",
@@ -79,10 +80,11 @@ export default function IssuedCertificatesPage() {
                         gap: "1.5rem",
                         width: "50%",
                         alignItems: "flex-start",
-                        paddingLeft: "2rem"
+                        paddingLeft: "2rem",
+                        backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)',
                     }}
                 >
-                    <Typography component="div" variant="h5">Please Enter the details</Typography>
+                    <Typography component="div" variant="h5" sx={{ color: 'white' }}>Please Enter the details</Typography>
                     <div
                         style={{
                             display: "flex",
@@ -101,31 +103,40 @@ export default function IssuedCertificatesPage() {
                             type={addressSaved ? "password" : "text"}
                             disabled={addressSaved}
                             fullWidth
+                            InputLabelProps={{ style: { color: 'white' } }} // Change color of the label
+                                InputProps={{
+                                    style: {
+                                        border: 'white solid',
+                                        color: 'white', // Change color of the text
+                                    },
+                                    placeholder: "Enter receiver's address", // Change color of the placeholder
+                                }}
                         />
-                        <Button variant="contained" onClick={() => setAddressSaved(prev => !prev)}>
+                        <Button variant="contained" onClick={() => setAddressSaved(prev => !prev)} sx={{ color: 'white' }}>
                             {addressSaved ? "Update" : "Save"}
                         </Button>
                     </div>
                     <div>
                         <FormControl>
-                            <FormLabel>Type of Account</FormLabel>
+                            <FormLabel sx={{ color: 'white' }}>Type of Account</FormLabel>
                             <RadioGroup row onChange={(e) => setUserType(e.target.value)} value={userType}>
-                                <FormControlLabel value="org" control={<Radio />} label="Organization" />
-                                <FormControlLabel value="user" control={<Radio />} label="User" />
+                                <FormControlLabel value="org" control={<Radio />} label="Organization" sx={{ color: 'white' }}/>
+                                <FormControlLabel value="user" control={<Radio />} label="User" sx={{ color: 'white' }}/>
                             </RadioGroup>
                         </FormControl>
                     </div>
-                    <Button variant="contained" fullWidth onClick={handleSubmit}>
+                    <Button variant="contained" fullWidth onClick={handleSubmit} sx={{ color: 'white' }}>
                         Submit
                     </Button>
                 </Paper>
                 <Paper
                     sx={{
-                        width: "100%"
+                        width: "100%",
+                        backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)',
                     }}
                 >
                     {isMutating?(
-                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", gap: 8}}>
+                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", gap: 8, backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)',}}>
                             <CircularProgress />
                             <Typography variant="body2" color="text.secondary">Loading</Typography>
                         </div>
@@ -135,10 +146,11 @@ export default function IssuedCertificatesPage() {
                                 display: "flex",
                                 flexDirection: "column",
                                 padding: "1rem",
-                                alignItems: "center"
+                                alignItems: "center",
+                                // backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)',
                             }}
                         >
-                            <Typography variant="h4" color="text.secondary">Your Certificates</Typography>
+                            <Typography variant="h4" color="text.secondary" sx={{color: "white"}}>Your Certificates</Typography>
                             <div
                                 style={{
                                     display: "flex",
@@ -147,7 +159,8 @@ export default function IssuedCertificatesPage() {
                                     flexWrap: "wrap",
                                     gap: "2rem",
                                     padding: "2rem",
-                                    justifyContent: "center"
+                                    justifyContent: "center",
+                                    // backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)',
                                 }}
                             >
                                 {certificates?.map((e, i) => (
@@ -157,7 +170,8 @@ export default function IssuedCertificatesPage() {
                                             gap: "1rem",
                                             display: "flex",
                                             flexDirection: "column",
-                                            background: "#2e2e2e",
+                                            // background: "#2e2e2e",
+                                            // backgroundImage: 'linear-gradient(45deg, #0965c0, #c53a94)',
                                         }}
                                         key={i}
                                     >
