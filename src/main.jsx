@@ -1,4 +1,5 @@
-import IndexPage from '@pages/index.jsx';
+// import IndexPage from '@pages/index.jsx';
+import IndexPage from './pages/index'
 import AuthProvider from '@providers/auth.jsx';
 import ThemeProvider from '@theme/index.jsx';
 import React from 'react';
