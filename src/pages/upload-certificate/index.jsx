@@ -3,8 +3,8 @@ import CardMembershipIcon from '@mui/icons-material/CardMembership';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import { useState } from "react";
 import { uploadFileToIPFS, uploadJSONToIPFS } from "../../pinata";
-import ModalComponent from "@components/Modal";
-import { useAuth } from "@context/auth";
+import ModalComponent from "../../components/Modal";
+import { useAuth } from "../../context/auth.js";
 
 const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',
