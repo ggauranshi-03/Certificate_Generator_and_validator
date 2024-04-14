@@ -1,4 +1,4 @@
-import styles from "@styles/org.module.scss";
+import styles from "../styles/org.module.scss"
 import domtoimage from 'dom-to-image';
 import { ethers } from "ethers";
 import { useState } from "react";

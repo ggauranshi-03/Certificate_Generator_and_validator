@@ -1,5 +1,5 @@
 import { GetIpfsUrlFromPinata } from "../utils";
-import styles from "@styles/tile.module.scss";
+import styles from "../styles/nav.module.scss"
 function NFTTile (data) {
 const IPFSUrl = GetIpfsUrlFromPinata(data.data.image);
 

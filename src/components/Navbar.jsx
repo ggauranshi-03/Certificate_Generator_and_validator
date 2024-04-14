@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { faUser, faUsersBetweenLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "@styles/nav.module.scss";
+// import styles from "@styles/nav.module.scss";
+import styles from "../styles/nav.module.scss"
 import { ethers } from "ethers";
 
 function Navbar() {

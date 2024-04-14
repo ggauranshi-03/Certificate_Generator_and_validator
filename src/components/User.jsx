@@ -4,7 +4,7 @@ import { useState } from "react";
 import Marketplace from '../ABI/abi.json';
 import { GetIpfsUrlFromPinata } from "../utils";
 import NFTTile from "./NFTTile";
-import styles from '@styles/user.module.scss';
+import styles from "../styles/user.module.scss"
 
 function User() {
   const [address, setAddress] = useState();

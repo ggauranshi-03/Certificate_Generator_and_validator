@@ -11,10 +11,10 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import Certificate from "@ABI/abi.json";
+import Certificate from "../../ABI/abi.json";
 import { ethers } from "ethers";
 import { useState, useEffect } from "react";
-import { useAuth } from "@context/auth";
+import { useAuth } from "../../context/auth.js";
 
 export default function Header() {
   const { setAuth } = useAuth();
