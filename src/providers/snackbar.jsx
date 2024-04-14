@@ -1,4 +1,4 @@
-import { SnackbarContext } from '@context/snackbar';
+import { SnackbarContext } from '../context/snackbar.js';
 import MuiAlert from '@mui/material/Alert';
 import MuiSnackbar from '@mui/material/Snackbar';
 import { useState, forwardRef } from 'react';
