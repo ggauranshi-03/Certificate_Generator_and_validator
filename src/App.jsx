@@ -4,8 +4,8 @@ import Navbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Carousel from './components/Carousel';
 import Footer from './components/Footer';
-import IndexPage from '@pages';
-import RegisterPage from '@pages/register';
+import IndexPage from './pages';
+import RegisterPage from './pages/register';
 
 function App() {
   return (

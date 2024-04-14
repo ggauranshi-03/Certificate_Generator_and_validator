@@ -5,10 +5,10 @@ import { useState } from "react";
 import styles from "./styles.module.scss";
 import { uploadFileToIPFS, uploadJSONToIPFS } from "../../pinata";
 import { ethers } from "ethers"
-import Marketplace from "@ABI/abi.json"
+import Marketplace from "../../ABI/abi.json"
 import moment from 'moment/moment';
-import ModalComponent from '@components/Modal';
-import { useAuth } from "@context/auth";
+import ModalComponent from '../../components/Modal';
+import { useAuth } from "../../context/auth.js";
 
 const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',

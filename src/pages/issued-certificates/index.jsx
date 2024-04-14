@@ -1,4 +1,4 @@
-import { useAuth } from "@context/auth";
+import { useAuth } from "../../context/auth.js";
 import {
   Button,
   CircularProgress,
@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import useSWRMutation from "swr/mutation";
-import { GetIpfsUrlFromPinata } from "@utils";
+import { GetIpfsUrlFromPinata } from "../../utils.js";
 import axios from "axios";
 
 export default function IssuedCertificatesPage() {
